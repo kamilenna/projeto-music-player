@@ -1,4 +1,4 @@
-//import './App.css'
+import './SearchPage.css'
 import { Link } from 'react-router-dom';
 import MusicIcon from "../../assets/music-icon.png"
 import CapaAlbum from "../../assets/capa-album.png"
@@ -8,11 +8,13 @@ function SearchPage() {
 
     return (
         <div className="Search-page">
-            <div>
-                <Link to="/"><img src={MusicIcon} /></Link>
-                <h2>Olá, seja bem-vindo ao <i>Melody</i></h2>
-            </div>
-            <div>
+            <section className='title-page'>
+                <div className='logo'>
+                    <Link to="/"><img src={MusicIcon} /></Link>
+                </div>
+                <h2>Olá, seja bem-vindo ao <i>Melody</i> !</h2>
+            </section>
+            <div className='search'>
                 <input type="text" placeholder="Busque por cantor, musica ou álbum" />
                 <button>Buscar</button>
             </div>
@@ -29,6 +31,9 @@ function SearchPage() {
                             <FaPlayCircle />
                         </div>
                     </div>
+                    {/* <div className="musica">
+                        <audio controls src=""></audio>
+                    </div> */}
                 </div>
 
                 <div className="music-track">
