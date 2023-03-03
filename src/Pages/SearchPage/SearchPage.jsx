@@ -15,21 +15,25 @@ function SearchPage() {
                 <h2>Olá, seja bem-vindo ao <i>Melody</i> !</h2>
             </section>
             <div className='search'>
-                <input type="text" placeholder="Busque por cantor, musica ou álbum" />
+                <input type="text" placeholder="Busque por cantor, música ou álbum" />
                 <button>Buscar</button>
             </div>
             <section className="tracks">
                 <div className="music-track">
-                    <img src={CapaAlbum} alt="capa" />
+                    <div className="capa">
+                        <img src={CapaAlbum} alt="capa da música ou álbum" />
+                    </div>
                     <div>
-                        <div className="descricao">
-                            <h6>Título</h6>
-                            <p><i>Artista</i></p>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Saiba mais</a>
-                        </div>
-                        <div className="play">
-                            <FaPlayCircle />
-                        </div>
+                        <section className="descricao">
+                            <div className="infos">
+                                <h3>Título</h3>
+                                <p><i>Artista</i></p>
+                                <a href="https://www.google.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                            </div>
+                            <div className="play">
+                                <FaPlayCircle />
+                            </div>
+                        </section>
                     </div>
                     {/* <div className="musica">
                         <audio controls src=""></audio>
@@ -37,31 +41,37 @@ function SearchPage() {
                 </div>
 
                 <div className="music-track">
-                    <img src={CapaAlbum} alt="capa" />
+                    <div className="capa">
+                        <img src={CapaAlbum} alt="capa da música ou álbum" />
+                    </div>
                     <div>
-                        <div className="descricao">
-                            <h6>Título</h6>
-                            <p><i>Artista</i></p>
-                            <a href="#" target="_blank" rel="noopener noreferrer">Saiba mais</a>
-                        </div>
-                        <div className="play">
-                            <FaPlayCircle />
-                        </div>
+                        <section className="descricao">
+                            <div className="infos">
+                                <h3>Título</h3>
+                                <p><i>Artista</i></p>
+                                <a href="https://www.google.com.br/" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                            </div>
+                            <div className="play">
+                                <FaPlayCircle />
+                            </div>
+                        </section>
                     </div>
                 </div>
 
                 <div className="music-track">
-                    <img src={CapaAlbum} alt="capa" />
-                    <div>
-                        <div className="descricao">
-                            <h6>Título</h6>
+                    <div className="capa">
+                        <img src={CapaAlbum} alt="capa da música ou álbum" />
+                    </div>
+                    <section className="descricao">
+                        <div className="infos">
+                            <h3>Título</h3>
                             <p><i>Artista</i></p>
                             <a href="#" target="_blank" rel="noopener noreferrer">Saiba mais</a>
                         </div>
                         <div className="play">
                             <FaPlayCircle />
                         </div>
-                    </div>
+                    </section>
                 </div>
             </section>
         </div>
