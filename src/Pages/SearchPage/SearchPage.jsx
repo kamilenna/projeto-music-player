@@ -1,10 +1,40 @@
 import './SearchPage.css'
 import { Link } from 'react-router-dom';
 import MusicIcon from "../../assets/music-icon.png"
-import CapaAlbum from "../../assets/capa-album.png"
-import { FaPlayCircle } from "react-icons/fa";
+import { useState } from 'react';
+import MusicTrack from '../../Componentes/MusicTrack';
+//import CapaAlbum from "../../assets/capa-album.png"
+//import { FaPlayCircle } from "react-icons/fa";
 
 function SearchPage() {
+    console.log(process.env.VITE_API_KEY)
+
+    const [Music, setMusic] = useState({ "title": "" })
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': process.env.VITE_API_KEY,
+            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+        }
+    };
+
+    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=julie%20and%20the%20phantoms', options)
+        .then(response => response.json())
+        .then(response => {
+            for (var i = 0; i <= 10; i++) {
+                const data = response.data[i]
+                setMusic({
+                    id: data.id,
+                    title: data.title,
+                    cover: data.album.cover_big,
+                    artist: data.artist.name,
+                    link: data.link,
+                    preview: data.preview,
+                });
+            }
+        })
+
 
     return (
         <div className="Search-page">
@@ -19,7 +49,9 @@ function SearchPage() {
                 <button>Buscar</button>
             </div>
             <section className="tracks">
-                <div className="music-track">
+                <MusicTrack key={Music.id} title={Music.title} cover={Music.cover} artist={Music.artist} link={Music.link} preview={Music.preview} />
+                {/* <MusicTrack /> */}
+                {/* <div className="music-track">
                     <div className="capa">
                         <img src={CapaAlbum} alt="capa da música ou álbum" />
                     </div>
@@ -37,10 +69,10 @@ function SearchPage() {
                     </div>
                     {/* <div className="musica">
                         <audio controls src=""></audio>
-                    </div> */}
-                </div>
+                    </div> 
+                </div>*/}
 
-                <div className="music-track">
+                {/*<div className="music-track">
                     <div className="capa">
                         <img src={CapaAlbum} alt="capa da música ou álbum" />
                     </div>
@@ -72,7 +104,7 @@ function SearchPage() {
                             <FaPlayCircle />
                         </div>
                     </section>
-                </div>
+                </div>*/}
             </section>
         </div>
     )
