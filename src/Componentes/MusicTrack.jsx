@@ -17,7 +17,7 @@ function MusicTrack(props) {
                         <div className="infos">
                             <h3>{props.title}</h3>
                             <p><i>{props.artist}</i></p>
-                            <a href={props.link} target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                            <a href={props.linkSaibaMais} target="_blank" rel="noopener noreferrer">Saiba mais</a>
                         </div>
                         <div className="play">
                             <FaPlayCircle />

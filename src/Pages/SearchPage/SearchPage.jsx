@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import MusicIcon from "../../assets/music-icon.png"
 import { useState } from 'react';
 import MusicTrack from '../../Componentes/MusicTrack';
+//import axios from "axios";
 //import CapaAlbum from "../../assets/capa-album.png"
 //import { FaPlayCircle } from "react-icons/fa";
 
 function SearchPage() {
     //console.log(import.meta.env.VITE_API_KEY)
 
-    const [Music, setMusic] = useState({ "title": "" })
+    const [music, setMusic] = useState("")
 
     const options = {
         method: 'GET',
@@ -19,21 +20,48 @@ function SearchPage() {
         }
     };
 
-    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=julie%20and%20the%20phantoms', options)
+    fetch('https://deezerdevs-deezer.p.rapidapi.com/search?q=taylorswift', options)
         .then(response => response.json())
         .then(response => {
-            for (var i = 0; i <= 10; i++) {
-                const data = response.data[i]
+            for (let i = 0; i <= 10; i++) {
+                //var numberMusic = i.toString()
+                //console.log(numberMusic)
+                const data = response.data[10]
                 setMusic({
                     id: data.id,
                     title: data.title,
                     cover: data.album.cover_big,
                     artist: data.artist.name,
-                    link: data.link,
+                    linkSaibaMais: data.linkSaibaMais,
                     preview: data.preview,
                 });
             }
         })
+
+    // const options = {
+    //     method: 'GET',
+    //     url: 'https://deezerdevs-deezer.p.rapidapi.com/search',
+    //     params: { q: 'eminem' },
+    //     headers: {
+    //         'X-RapidAPI-Key': '',
+    //         'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+    //     }
+    // };
+
+    // axios.request(options).then(function (response) {
+    //     const data = response.data[0]
+    //     console.log(data)
+    //     setMusic({
+    //         id: data.id,
+    //         title: data.title,
+    //         cover: data.cover_big,
+    //         artist: data.artist,
+    //         link: data.link,
+    //         preview: data.preview,
+    //     });
+    // }).catch(function (error) {
+    //     console.error(error);
+    // });
 
 
     return (
@@ -49,7 +77,7 @@ function SearchPage() {
                 <button>Buscar</button>
             </div>
             <section className="tracks">
-                <MusicTrack key={Music.id} title={Music.title} cover={Music.cover} artist={Music.artist} link={Music.link} preview={Music.preview} />
+                <MusicTrack key={music.id} title={music.title} cover={music.cover} artist={music.artist} linkSaibaMais={music.linkSaibaMais} preview={music.preview} />
                 {/* <MusicTrack /> */}
                 {/* <div className="music-track">
                     <div className="capa">
