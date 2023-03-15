@@ -7,14 +7,14 @@ import MusicTrack from '../../Componentes/MusicTrack';
 //import { FaPlayCircle } from "react-icons/fa";
 
 function SearchPage() {
-    console.log(process.env.VITE_API_KEY)
+    //console.log(import.meta.env.VITE_API_KEY)
 
     const [Music, setMusic] = useState({ "title": "" })
 
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': process.env.VITE_API_KEY,
+            'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
