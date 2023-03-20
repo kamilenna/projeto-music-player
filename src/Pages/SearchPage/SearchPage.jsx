@@ -32,24 +32,26 @@ export default function SearchPage() {
 
                     function listarMusicas(dados) {
                         let main = document.querySelector(".music-track")
-                        main.innerHTML += `   
-                            <div className="capa">
-                                <img src='${dados.album.cover_big}' alt="capa da música ou álbum" />
-                            </div>
-                            <div>
-                                <section className="descricao">
-                                    <div className="infos">
-                                        <h3>${dados.title}</h3>
-                                        <p><i>${dados.artist.name}</i></p>
-                                        <a href=${dados.link} target="_blank" rel="noopener noreferrer">Saiba mais</a>
-                                    </div>
-                                    // <div className="play">
-                                    //     <FaPlayCircle />
-                                    // </div>
-                                </section>
-                            </div>
-                            <div className="musica">
-                                <audio controls src=${dados.preview}></audio>
+                        main.innerHTML += ` 
+                        <div class="track-content">  
+                                <div class="capa">
+                                    <img src='${dados.album.cover_big}' alt="capa da música ou álbum" />
+                                </div>
+                                <div>
+                                    <section class="descricao">
+                                        <div class="infos">
+                                            <h3>${dados.title}</h3>
+                                            <p><i>${dados.artist.name}</i></p>
+                                            <a href=${dados.link} target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                                        </div>
+                                        <div class="player">
+                                            <audio controls>
+                                                <source src="${dados.preview}" type="audio/mpeg">
+                                                Your browser does not support the audio tag.
+                                            </audio>
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
                         </div>
                    
@@ -59,6 +61,7 @@ export default function SearchPage() {
 
                 }
             });
+
     }
     return (
         <div className="Search-page">
@@ -80,3 +83,6 @@ export default function SearchPage() {
     )
 }
 
+// <div class="play">
+                                    //     <FaPlayCircle />
+                                    // </div>

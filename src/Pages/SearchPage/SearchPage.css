@@ -70,13 +70,22 @@
 .tracks {
     padding: 2rem 0;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
 
 .music-track {
-    margin: 1rem 0;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.track-content {
+    height: 480px;
+    margin: 20px;
 }
 
 .capa {
@@ -89,13 +98,19 @@
 
 .descricao {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 300px;
+    height: calc(480px - 300px);
 }
 
 .descricao h3, .descricao p {
     color: #FFFFFF;
     margin-bottom: 5px;
+}
+
+.descricao p {
+    color: #FC3F84;
 }
 
 .infos a {
@@ -106,9 +121,24 @@
     color: #FED73A;
 }
 
-.play {
+/*.play {
     font-size: 2.5rem;
     color: #FC3F84;
+}*/
+.player {
+    margin: 20px 0 0px 0;
+
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #d7f7f791;
+    border: none;
+}
+
+@media (min-width:1420px) {
+    .music-track {
+        width: 1200px;
+    }
 }
 
 @media (min-width:600px) {
@@ -136,4 +166,14 @@
     .music-track {
         margin: 1rem;
     }
+
+    .track-content {
+        margin: 0 50px;
+    }
 }
+
+@media (min-width:450px) {
+    .track-content {
+        margin: 20px;
+    }
+} 
