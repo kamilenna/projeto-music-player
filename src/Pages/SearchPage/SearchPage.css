@@ -31,22 +31,14 @@
 .search {
     display: block;
     margin: 0 auto;
-    /*align-items: center;*/
-    /*justify-content: center;*/
-    /*display: block;*/
     width: 100%;
-    /*max-width: 425px;*/
 }
 
 .search input, .search button {
-    /*max-width: 425px;*/
     height: 60px;
     border-radius: 50px;
     border: none;
     width: 100%;
-    /*display: flex;
-    flex-direction: column;*/
-   
 }
 
 .search input {
@@ -64,13 +56,11 @@
     font-size: 1.5rem;
     font-weight: 700;
     background: #FED73A;
-    /*display: block;*/
 }
 
 .tracks {
     padding: 2rem 0;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -84,8 +74,10 @@
 }
 
 .track-content {
-    height: 480px;
+    height: 500px;
     margin: 20px;
+    
+    
 }
 
 .capa {
@@ -101,7 +93,7 @@
     flex-direction: column;
     justify-content: flex-end;
     max-width: 300px;
-    height: calc(480px - 300px);
+    height: calc(500px - 300px);   
 }
 
 .descricao h3, .descricao p {
@@ -110,7 +102,7 @@
 }
 
 .descricao p {
-    color: #FC3F84;
+    color: #fc3f84;
 }
 
 .infos a {
@@ -121,13 +113,9 @@
     color: #FED73A;
 }
 
-/*.play {
-    font-size: 2.5rem;
-    color: #FC3F84;
-}*/
 .player {
     margin: 20px 0 0px 0;
-
+    
 }
 
 audio::-webkit-media-controls-panel {
