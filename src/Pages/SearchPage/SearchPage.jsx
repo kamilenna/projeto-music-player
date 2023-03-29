@@ -12,7 +12,7 @@ export default function SearchPage() {
     const [search, setSearch] = useState("")
 
 
-    const shouldDisplayNotFound = music.length;
+    const resultsNotFound = !music.length;
     const getMusics = async () => {
         const getResponse = await axios({
             method: 'GET',
@@ -44,7 +44,7 @@ export default function SearchPage() {
             <section className="tracks">
                 <div className="music-track">
                     {music.map((m) => (<MusicCard key={m.id} title={m.title} cover={m.album.cover_big} artist={m.artist.name} link={m.link} preview={m.preview} />))}
-                    {!shouldDisplayNotFound && (
+                    {resultsNotFound && (
                         <NoResults />
                     )}
                 </div>

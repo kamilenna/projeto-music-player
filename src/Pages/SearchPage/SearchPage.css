@@ -119,13 +119,21 @@
 }
 
 .no-results {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 1.2rem;
+}
+
+.no-results p {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    color: #000;
 }
 
 .no-results ul {
     margin-left: 20px;
 }
+
 
 audio::-webkit-media-controls-panel {
     background-color: #d7f7f791;
