@@ -118,6 +118,15 @@
     
 }
 
+.no-results {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+}
+
+.no-results ul {
+    margin-left: 20px;
+}
+
 audio::-webkit-media-controls-panel {
     background-color: #d7f7f791;
     border: none;

@@ -4,15 +4,15 @@ import MusicIcon from "../../assets/music-icon.png"
 import { useState } from 'react';
 import axios from "axios";
 import MusicCard from "../../componentes/MusicCard"
+import NoResults from '../../componentes/NoResults';
 
 export default function SearchPage() {
 
     const [music, setMusic] = useState([])
     const [search, setSearch] = useState("")
-    const handleChangeSearch = (e) => {
-        setSearch(e.target.value)
-    }
 
+
+    const shouldDisplayNotFound = music.length;
     const getMusics = async () => {
         const getResponse = await axios({
             method: 'GET',
@@ -28,6 +28,7 @@ export default function SearchPage() {
                 setMusic(results)
             });
     }
+
     return (
         <div className="Search-page">
             <section className='title-page'>
@@ -37,12 +38,15 @@ export default function SearchPage() {
                 <h2>Olá, seja bem-vindo ao <i>Melody</i> !</h2>
             </section>
             <div className='search'>
-                <input type="text" placeholder="Busque por cantor, música ou álbum" value={search} onChange={(e) => handleChangeSearch(e)} />
+                <input type="text" placeholder="Busque por cantor, música ou álbum" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <button onClick={getMusics}>Buscar</button>
             </div>
             <section className="tracks">
                 <div className="music-track">
                     {music.map((m) => (<MusicCard key={m.id} title={m.title} cover={m.album.cover_big} artist={m.artist.name} link={m.link} preview={m.preview} />))}
+                    {!shouldDisplayNotFound && (
+                        <NoResults />
+                    )}
                 </div>
             </section>
         </div>

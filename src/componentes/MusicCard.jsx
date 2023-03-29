@@ -1,5 +1,4 @@
 import '../Pages/SearchPage/SearchPage.css'
-import { FaPlayCircle } from "react-icons/fa";
 
 export default function MusicCard(props) {
 
