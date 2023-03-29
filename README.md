@@ -7,7 +7,6 @@
 <h2>💻 Sobre o projeto</h2>
 <p>Um site onde você pode encontrar e aproveitar suas musicas favoritas.</p> 
 
-<br>
 
 <h2>👩‍🎓 O que aprendi</h2>
 Com esse projeto pude praticar criação de projetos ReactJs + ViteJs mais complexos, criação de rotas para navegar entre páginas, consumo de API utilizando Axios e trabalhar com variáveis de ambiente para protejer a chave de acesso da API.
@@ -17,6 +16,7 @@ Com esse projeto pude praticar criação de projetos ReactJs + ViteJs mais compl
 <br>
 
 <h2>🎨 Layout</h2>
+<img src="../projeto-music-player/src/assets/Gif%20-%20layout.gif"/>
 <h3><strong><a href="https://www.figma.com/file/RMGYpqm3AWQ2peOmNqhNo4/Music-player?node-id=0%3A1&t=wyr8QaAcmPda66q3-1">Link do Figma</a></strong></h3>
 
 <br>
