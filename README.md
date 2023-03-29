@@ -16,7 +16,7 @@ Com esse projeto pude praticar criação de projetos ReactJs + ViteJs mais compl
 <br>
 
 <h2>🎨 Layout</h2>
-<img src="../projeto-music-player/src/assets/Gif%20-%20layout.gif"/>
+<img src="src/assets/gif-layout.gif"/>
 <h3><strong><a href="https://www.figma.com/file/RMGYpqm3AWQ2peOmNqhNo4/Music-player?node-id=0%3A1&t=wyr8QaAcmPda66q3-1">Link do Figma</a></strong></h3>
 
 <br>
