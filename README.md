@@ -9,7 +9,7 @@
 
 
 <h2>👩‍🎓 O que aprendi</h2>
-Com esse projeto pude praticar criação de projetos ReactJs + ViteJs mais complexos, criação de rotas para navegar entre páginas, consumo de API utilizando Axios e trabalhar com variáveis de ambiente para protejer a chave de acesso da API.
+Com esse projeto pude praticar criação de projetos ReactJs + ViteJs mais complexos, criação de rotas para navegar entre páginas, consumo de API utilizando Axios e trabalhar com variáveis de ambiente para proteger a chave de acesso da API.
 
 <h3><strong><a href="https://melodyplay.netlify.app/" target="_blank">Link do projeto</a></strong></h3>
 
